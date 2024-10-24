@@ -1,12 +1,11 @@
 name: Manual
-on:
-  workflow_despatch:
-    inputs:
-      greeting:
-        type: string
-        default: Hello
-        required: true
-        description: A cheerful word
+on:workflow_despatch:
+  inputs:
+    greeting:
+      type: string
+      default: Hello
+      required: true
+      description: A cheerful word
 jobs:
   run:
     runs-on: ubuntu-latest
