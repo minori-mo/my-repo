@@ -11,12 +11,12 @@ jobs:
       LITERAL_NUMBER: ${{ 1234 }} # number型
       LITERAL_STRING: ${{ 'Hello' }} # string型（通常記法）
       LITERAL_OMIT_STRING: World # string型（省略記法）
-      CONTAINS_FUNC: ${{ contains('Hello', 'ell') }} # 「ell」を含むか
-      STARTS_WITH_FUNC: ${{ startsWith('Hello', 'He') }} # 「He」で始まるか
-      ENDS_WITH_FUNC: ${{ endsWith('Hello', 'lo') }} # 「lo」で終わるか
+      # CONTAINS_FUNC: ${{ contains('Hello', 'ell') }} # 「ell」を含むか
+      # STARTS_WITH_FUNC: ${{ startsWith('Hello', 'He') }} # 「He」で始まるか
+      # ENDS_WITH_FUNC: ${{ endsWith('Hello', 'lo') }} # 「lo」で終わるか
     steps:
       - run: echo "${USERNAME}"
       - run: echo "${PASSWORD}"
       - run: echo "${PASSWORD:0:1} ${PASSWORD#?}"
       - run: printenv | grep 'LITERAL_'
-      - run: printenv | grep 'FUNC_'
+      # - run: printenv | grep 'FUNC_'
