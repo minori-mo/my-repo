@@ -6,7 +6,13 @@ jobs:
     env:
       USERNAME: ${{ vars.USERNAME }} # Variablesの参照
       PASSWORD: ${{ secrets.PASSWORD }}
+      LITERAL_NULL: ${{ null }} # null型
+      LITERAL_BOOLEAN: ${{ true }} # boolean型
+      LITERAL_NUMBER: ${{ 1234 }} # number型
+      LITERAL_STRING: ${{ 'Hello' }} # string型（通常記法）
+      LITERAL_OMIT_STRING: World # string型（省略記法）
     steps:
       - run: echo "${USERNAME}"
       - run: echo "${PASSWORD}"
       - run: echo "${PASSWORD:0:1} ${PASSWORD#?}"
+      - run: printenv | grep 'LITERAL_'
