@@ -19,4 +19,4 @@ jobs:
       - run: echo "${PASSWORD}"
       - run: echo "${PASSWORD:0:1} ${PASSWORD#?}"
       - run: printenv | grep 'LITERAL_'
-      - run: printenv | grep 'FUNC_'
+      - run: printenv | grep '_FUNC'
