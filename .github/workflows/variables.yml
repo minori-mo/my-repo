@@ -14,6 +14,8 @@ jobs:
       CONTAINS_FUNC: ${{ contains('Hello', 'ell') }} # 「ell」を含むか
       STARTS_WITH_FUNC: ${{ startsWith('Hello', 'He') }} # 「He」で始まるか
       ENDS_WITH_FUNC: ${{ endsWith('Hello', 'lo') }} # 「lo」で終わるか
+      FORMAT_FUNC: ${{ format('{0}, {1}.', 'Hi', 'world') }} # フォーマット
+      JOIN_FUNC: ${{ join(github.event.*.html_url, ', ') }} # カンマで結合
     steps:
       - run: echo "${USERNAME}"
       - run: echo "${PASSWORD}"
