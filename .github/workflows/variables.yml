@@ -16,7 +16,7 @@ jobs:
       ENDS_WITH_FUNC: ${{ endsWith('Hello', 'lo') }} # 「lo」で終わるか
       FORMAT_FUNC: ${{ format('{0}, {1}.', 'Hi', 'world') }} # フォーマット
       JOIN_FUNC: ${{ join(github.event.*.html_url, ', ') }} # カンマで結合
-      JOIN_FUNC2: ${{ github.event }} # カンマで結合
+      JOIN_FUNC2: ${{ github.event.*.html_url }} # カンマで結合
       CONTEXT: ${{ toJSON(github) }}
     steps:
       - run: echo "${USERNAME}"
