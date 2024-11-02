@@ -17,7 +17,6 @@ jobs:
       FORMAT_FUNC: ${{ format('{0}, {1}.', 'Hi', 'world') }} # フォーマット
       JOIN_FUNC: ${{ join(github.event.*.html_url, ', ') }} # カンマで結合
       CONTEXT: ${{ toJSON(github) }}
-      HASH: ${{hashFiles('.github.workflows/*.yml')}}
     steps:
       - run: echo "${USERNAME}"
       - run: echo "${PASSWORD}"
@@ -25,4 +24,3 @@ jobs:
       - run: printenv | grep 'LITERAL_'
       - run: printenv | grep '_FUNC'
       - run: echo "${CONTEXT}"
-      - run: echo "${HASH}"
