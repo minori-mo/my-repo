@@ -1,0 +1,6 @@
+
+//Actionの確認
+gh run watch
+gh run view
+
+gh workflow run manual.yml -f greeting=goodbye
