@@ -24,3 +24,7 @@ jobs:
       - run: printenv | grep 'LITERAL_'
       - run: printenv | grep '_FUNC'
       - run: echo "${CONTEXT}"
+      - users: action/checkout@v4
+      - run: echo "${HASH}"
+        env:
+          HASH: ${{hashFiles('.github.workflows/*.yml')}}
