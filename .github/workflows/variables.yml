@@ -36,7 +36,7 @@ jobs:
       - name: Amazing Script
         run: echo "Hello"
       - id: source
-        run: echo "result=Hello" >> "${{GITHUB_OUTPUT}}"
+        run: echo "result=Hello" >> "${{Variables}}"
       - env:
           RESULT: ${{ steps.source.outputs.result}}
         run: echo "${{RESULT}}"
