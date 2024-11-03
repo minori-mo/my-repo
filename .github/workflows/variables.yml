@@ -2,7 +2,8 @@ name: Variables
 on: push
 jobs:
   print:
-    if: ${{ github.actor=='octocat'}}
+    name: Super Useful Job
+    # if: ${{ github.actor=='octocat'}}
     runs-on: ubuntu-latest
     env:
       USERNAME: ${{ vars.USERNAME }} # Variablesの参照
@@ -31,3 +32,5 @@ jobs:
           HASH: ${{ hashFiles('.github/workflows/*.yml') }}
       - run: echo "Hello"
         if: ${{ contains(github.run_id, '100') }}
+      - name: Amazing Script
+        run: echo "Hello"
