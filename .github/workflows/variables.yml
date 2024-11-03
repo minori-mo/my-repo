@@ -35,3 +35,8 @@ jobs:
         if: ${{ contains(github.run_id, '100') }}
       - name: Amazing Script
         run: echo "Hello"
+      - id: source
+        run: echo "result=Hello" >> "${{GITHUB_OUTPUT}}"
+      - env:
+          RESULT: ${{ steps.source.outputs.result}}
+        run: echo "${{RESULT}}"
