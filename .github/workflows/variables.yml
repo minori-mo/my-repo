@@ -42,3 +42,4 @@ jobs:
         run: echo "${RESULT}"
       - run: echo "RESULT2=Hello2" >> "${GITHUB_ENV}"
       - run: echo "${RESULT2}"
+      - run: echo "::debug::This is a debug log"
