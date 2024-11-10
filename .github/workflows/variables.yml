@@ -47,3 +47,16 @@ jobs:
           set -x
           date
           hostname
+      - run: |
+          echo "::group::Show environment variables"
+          printenv
+          echo "::endgroup::"
+      - run: echo "::add-mask::${PASSWORD}"
+      - run: echo "${PASSWORD}"
+      - run: echo "::error::This is an error" # Errorレベルのアノテーション
+      - run: echo "::warning::This is a warning" # Warningレベルのアノテーション
+      - run: echo "::notice::This is a notice" # Noticeレベルのアノテーション
+      - run: | # マークダウンテキストをジョブサマリーへ出力
+          echo "## Example Title :rocket:" >> "${GITHUB_STEP_SUMMARY}"
+          echo "- first line" >> "${GITHUB_STEP_SUMMARY}"
+          echo "- second line" >> "${GITHUB_STEP_SUMMARY}"
